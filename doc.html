@@ -1,0 +1,236 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pure Water Documentation - a code documentation page template for codrops</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="scribbler-global.css">
+    <link rel="stylesheet" href="scribbler-doc.css">
+    <link rel="author" href="humans.txt">
+  </head>
+  <body>
+    <div class="doc__bg"></div>
+    <nav class="header">
+      <h1 class="logo">Pure <span class="logo__thin">Doc</span></h1>
+      <ul class="menu">
+        <div class="menu__item toggle"><span></span></div>
+        <li class="menu__item"><a href="" class="link link--dark"><i class="fa fa-github"></i> Github</a></li>
+        <li class="menu__item"><a href="index.html" class="link link--dark"><i class="fa fa-home"></i> Home</a></li>
+      </ul>
+    </nav>
+    <div class="wrapper">
+      <aside class="doc__nav">
+        <ul>
+          <li class="js-btn selected">Get Started</li>
+          <li class="js-btn">Installation</li>
+          <li class="js-btn">Configuration</li>
+        </ul>
+      </aside>
+      <article class="doc__content">
+        <section class="js-section">
+          <h3 class="section__title">Get Started</h3>
+          <p>
+            Install Git: If you haven't installed Git yet, download it from git-scm.com and follow the installation instructions for your operating system.
+          </p>
+          <p>
+            Install Flutter:
+Ensure you have Flutter installed. If not, follow the installation instructions on the official Flutter website.
+          </p>
+        </section>
+        <section class="js-section">
+        <h3 class="section__title">Installation</h3>
+        <p>
+          1. Open your terminal or command prompt.
+        </p>
+        <p>
+          2. Navigate to the directory where you want to clone the project:
+        </p>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                cd path/to/your/directory
+              </code>
+            </pre>
+          </div>
+          <p>
+            3. Clone the repository:
+          </p>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                git clone https://github.com/example/flutter_example.git
+              </code>
+            </pre>
+          </div>
+          <p>
+            4.Navigate to the project directory:
+          </p>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                cd flutter_example
+              </code>
+            </pre>
+          </div>
+          <p>
+            5. Install dependencies:
+          </p>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                flutter pub get
+              </code>
+            </pre>
+          </div>
+          <p>
+            6. Run the project:
+          </p>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                flutter run
+              </code>
+            </pre>
+          </div>
+          </section> 
+          <hr />
+          <section class="js-section">
+          <h3 class="section__title">Configuration</h3>
+          <h4>Prerequisites</h4>
+          <p>
+            1. Firebase Account: Ensure you have a Firebase account. If not, you can create one at firebase.google.com.
+          </p>
+          <p>
+            2. Flutter and Firebase CLI: Make sure you have Flutter installed and the Firebase CLI set up.
+          </p>
+          <h4>Steps</h4>
+          <p>
+            1. Clone the Repository: Follow the steps provided previously to clone the Flutter project from GitHub.
+          </p>
+          <p>
+            2. Create a Firebase Project:
+          </p>
+          <ul>
+            <li>Create a Firebase Project:</li>
+            <li>Click on "Add project" and follow the steps to create a new Firebase project.</li>
+          </ul>
+          <p>
+            3. Add Firebase to Your Flutter Project:
+          </p>
+          <ul>
+            <li>In the Firebase console, click on "Add app" and select the platform (iOS/Android) for your Flutter app.</li>
+          </ul>
+          <p>
+            4. Register Your App:
+          </p>
+          <ul>
+            <li>Enter the Android package name (you can find this in your Flutter project's android/app/src/main/AndroidManifest.xml file).</li>
+            <li>Download the google-services.json file.</li>
+          </ul>
+          <p>
+            5. Add the google-services.json File:
+          </p>
+          <ul>
+            <li>Place the google-services.json file in your Flutter project at android/app/.</li>
+          </ul>
+          <p>
+            6. Modify android/build.gradle Modify android/build.gradle:
+          </p>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                classpath 'com.google.gms:google-services:4.3.10' // Check for the latest version
+              </code>
+            </pre>
+          </div>
+          <p>
+            7.Modify android/app/build.gradle Add the following lines at the bottom:
+          </p>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                apply plugin: 'com.google.gms.google-services'
+              </code>
+            </pre>
+          </div>
+          <p>
+            Install Pods:
+          </p>
+          <h4>Update pubspec.yaml</h4>
+          <p>
+            Add the necessary Firebase dependencies to your pubspec.yaml file. For example:
+          </p>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                dependencies:
+                flutter:
+                  sdk: flutter
+                firebase_core: latest_version
+                firebase_auth: latest_version
+                cloud_firestore: latest_version
+                # Add any other Firebase dependencies your project needs
+              </code>
+            </pre>
+          </div>
+          <p>
+            Run flutter pub get to install the dependencies.
+          </p>
+          <h4>Initialize Firebase in Your Flutter App</h4>
+          <p>
+            Initialize Firebase in your main.dart file:
+          </p>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                dependencies:
+                flutter:
+                import 'package:firebase_core/firebase_core.dart';
+                import 'package:flutter/material.dart';
+
+                void main() async {
+                  WidgetsFlutterBinding.ensureInitialized();
+                  await Firebase.initializeApp();
+                  runApp(MyApp());
+                }
+
+                class MyApp extends StatelessWidget {
+                  @override
+                  Widget build(BuildContext context) {
+                    return MaterialApp(
+                      home: Scaffold(
+                        appBar: AppBar(title: Text('Firebase Example')),
+                        body: Center(child: Text('Hello, Firebase!')),
+                      ),
+                    );
+                  }
+                }
+
+              </code>
+            </pre>
+          </div>
+          <h4>Run the Project</h4>
+          <p>
+            Ensure you have a connected device (emulator or physical device) and run the project:
+          </p>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                flutter run
+              </code>
+            </pre>
+          </div>
+          <hr />
+          </section> 
+      </article>
+    </div>
+
+    <footer class="footer">Scribbler is a free HTML template created exclusively for <a href="https://tympanus.net/codrops/" target="_blank" class="link link--light">Codrops</a>.</footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="scribbler.js"></script>
+  </body>
+</html>
